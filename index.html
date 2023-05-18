@@ -8,10 +8,13 @@
   </head>
   <body>
     <script>
-      console.log("getTodayLastHour");
-      getTodayLastHour();
-      console.log("convertToTomorrowLastHour(2023-02-28T16:14:01)");
-      convertToTomorrowLastHour("2023-02-28T16:14:01");
+      let input = "1999-02-28T16:14:01";
+
+      isGreaterThanTonight(input);
+
+      //   getTodayLastHour();
+
+      //   convertToTomorrowLastHour(input);
 
       function getTodayLastHour() {
         const timeElapsed = Date.now();
@@ -31,7 +34,7 @@
         const DD = String(todayLastHour.getDate()).padStart(2, "0");
 
         const outputDateString = `${YYYY}-${MM}-${DD}T23:59:59.999Z`;
-        console.log(outputDateString);
+        // console.log(outputDateString);
 
         return todayLastHour;
       }
@@ -55,9 +58,14 @@
         const DD = String(dateLastHour.getDate()).padStart(2, "0");
 
         const outputDateString = `${YYYY}-${MM}-${DD}T23:59:59.999Z`;
-        console.log(outputDateString);
+        // console.log(outputDateString);
 
         return dateLastHour;
+      }
+
+      function isGreaterThanTonight(inputDate) {
+        let tonight = getTodayLastHour();
+        let limit = convertToTomorrowLastHour(inputDate);
       }
     </script>
   </body>
