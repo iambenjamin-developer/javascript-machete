@@ -12,10 +12,6 @@
 
       isGreaterThanTonight(input);
 
-      //   getTodayLastHour();
-
-      //   convertToTomorrowLastHour(input);
-
       function getTodayLastHour() {
         const timeElapsed = Date.now();
         let today = new Date(timeElapsed);
@@ -49,12 +45,21 @@
         return dateLastHour;
       }
 
+      function convertDateToString(date) {
+        const YYYY = date.getFullYear();
+        const MM = String(date.getMonth() + 1).padStart(2, "0");
+        const DD = String(date.getDate()).padStart(2, "0");
+
+        const outputDateString = `${YYYY}-${MM}-${DD}T23:59:59.999Z`;
+        return outputDateString;
+      }
+
       function isGreaterThanTonight(inputDate) {
         let tonight = getTodayLastHour();
         let tomorrowLastHour = convertToTomorrowLastHour(inputDate);
 
-        console.log(fromDateToString(tonight));
-        console.log(fromDateToString(tomorrowLastHour));
+        console.log(convertDateToString(tonight));
+        console.log(convertDateToString(tomorrowLastHour));
         // console.log(tonight);
         // console.log(limit);
         // if (tomorrowLastHour > tonight) {
@@ -66,15 +71,6 @@
         //   console.log(`tomorrowLastHour: ${tomorrowLastHour}`);
         //   console.log(`tonight: ${tomorrowLastHour}`);
         // }
-      }
-
-      function fromDateToString(date) {
-        const YYYY = date.getFullYear();
-        const MM = String(date.getMonth() + 1).padStart(2, "0");
-        const DD = String(date.getDate()).padStart(2, "0");
-
-        const outputDateString = `${YYYY}-${MM}-${DD}T23:59:59.999Z`;
-        return outputDateString;
       }
     </script>
   </body>
