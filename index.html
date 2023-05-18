@@ -45,7 +45,7 @@
         return dateLastHour;
       }
 
-      function convertDateToString(date) {
+      function convertDateLastHourToString(date) {
         const YYYY = date.getFullYear();
         const MM = String(date.getMonth() + 1).padStart(2, "0");
         const DD = String(date.getDate()).padStart(2, "0");
@@ -58,8 +58,8 @@
         let tonight = getTodayLastHour();
         let tomorrowLastHour = convertToTomorrowLastHour(inputDate);
 
-        console.log(convertDateToString(tonight));
-        console.log(convertDateToString(tomorrowLastHour));
+        console.log(convertDateLastHourToString(tonight));
+        console.log(convertDateLastHourToString(tomorrowLastHour));
         // console.log(tonight);
         // console.log(limit);
         // if (tomorrowLastHour > tonight) {
