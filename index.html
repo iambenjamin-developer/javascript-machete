@@ -82,12 +82,34 @@
         const DD = String(todayLastHour.getDate()).padStart(2, "0");
 
         const outputDateString = `${YYYY}-${MM}-${DD}T23:59:59.999Z`;
-
-        console.log(todayLastHour);
         console.log(outputDateString);
+
         return todayLastHour;
       }
-   
-   </script>
+
+      function convertToTomorrowLastHour(inputDate) {
+        let date = new Date(inputDate);
+        date.setDate(date.getDate() + 1); //Add 1 day
+
+        let dateLastHour = new Date(
+          date.getFullYear(),
+          date.getMonth() + 1,
+          date.getDate(),
+          23,
+          59,
+          59,
+          999
+        );
+
+        const YYYY = dateLastHour.getFullYear();
+        const MM = String(dateLastHour.getMonth() + 1).padStart(2, "0");
+        const DD = String(dateLastHour.getDate()).padStart(2, "0");
+
+        const outputDateString = `${YYYY}-${MM}-${DD}T23:59:59.999Z`;
+        console.log(outputDateString);
+
+        return dateLastHour;
+      }
+    </script>
   </body>
 </html>
