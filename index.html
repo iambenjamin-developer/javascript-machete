@@ -8,61 +8,8 @@
   </head>
   <body>
     <script>
-      canRollbackPlus();
-      function canRollbackPlus() {
-        const timeElapsed = Date.now();
-        let today = new Date(timeElapsed);
-        let todayLastHour = new Date(
-          today.getFullYear(),
-          today.getMonth() + 1,
-          today.getDate(),
-          23,
-          59,
-          59,
-          999
-        );
-        console.log(todayLastHour);
-
-        const YYYY = todayLastHour.getFullYear();
-        const MM = String(todayLastHour.getMonth() + 1).padStart(2, "0");
-        const DD = String(todayLastHour.getDate()).padStart(2, "0");
-
-        const outputDateString = `${YYYY}-${MM}-${DD}T23:59:59.999Z`;
-        console.log(outputDateString);
-        /*
-          let yearToday = today.getFullYear();
-          let monthToday = today.getMonth() + 1; //Returns the month (from 0-11)
-          monthToday = String(monthToday).padStart(2, "0");
-          let dayToday = today.getDate();
-          dayToday = String(day).padStart(2, "0");
-
-          console.log(
-            `========${element.SerialNumber}=${element.CreatedDate}===${today}=====`
-          );
-
-          const inputDate = element.CreatedDate;
-
-          let date = new Date(inputDate);
-          date.setDate(date.getDate() + 1); //Add 1 day
-
-          let year = date.getFullYear();
-          let month = date.getMonth() + 1; //Returns the month (from 0-11)
-          month = String(month).padStart(2, "0");
-          let day = date.getDate();
-          day = String(day).padStart(2, "0");
-
-          const outputDateString = `${year}-${month}-${day}T23:59:59.999Z`;
-          const outputDate = new Date(outputDateString);
-
-          console.log(outputDate); // Mon Jan 01 2024 20:59:59 GMT-0300 (hora estándar de Argentina)
-          console.log(JSON.stringify(outputDate)); // "2024-01-01T23:59:59.999Z"
-          console.log(outputDate.toDateString()); // Mon Jan 01 2024 => Converts the date portion of a Date object into a readable string
-          console.log(outputDate.getFullYear()); // 2024 => Returns the year
-          console.log(outputDate.getMonth() + 1); // 1 => Returns the month (from 0-11)
-          console.log(outputDate.getDate()); // 1 => Returns the day of the month (from 1-31)
-
-          */
-      }
+      getTodayLastHour();
+      convertToTomorrowLastHour("2023-01-01T16:14:01");
 
       function getTodayLastHour() {
         const timeElapsed = Date.now();
