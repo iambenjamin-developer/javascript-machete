@@ -8,7 +8,7 @@
   </head>
   <body>
     <script>
-      let input = "1999-02-28T16:14:01";
+      let input = "2023-05-17T16:14:01";
 
       isGreaterThanTonight(input);
 
@@ -58,8 +58,15 @@
         let tonight = getTodayLastHour();
         let tomorrowLastHour = convertToTomorrowLastHour(inputDate);
 
-        console.log(convertDateLastHourToString(tonight));
-        console.log(convertDateLastHourToString(tomorrowLastHour));
+        if (tonight >= tomorrowLastHour) {
+          console.log("TRUE - MOSTRAR ROLLBACK");
+        } else {
+          console.log("FALSE - OCULTAR ROLLBACK");
+        }
+        console.log("tonight => " + convertDateLastHourToString(tonight));
+        console.log(
+          "tomorrowLastHour => " + convertDateLastHourToString(tomorrowLastHour)
+        );
         // console.log(tonight);
         // console.log(limit);
         // if (tomorrowLastHour > tonight) {
