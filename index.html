@@ -29,13 +29,6 @@
           999
         );
 
-        const YYYY = todayLastHour.getFullYear();
-        const MM = String(todayLastHour.getMonth() + 1).padStart(2, "0");
-        const DD = String(todayLastHour.getDate()).padStart(2, "0");
-
-        const outputDateString = `${YYYY}-${MM}-${DD}T23:59:59.999Z`;
-        // console.log(outputDateString);
-
         return todayLastHour;
       }
 
@@ -53,13 +46,6 @@
           999
         );
 
-        const YYYY = dateLastHour.getFullYear();
-        const MM = String(dateLastHour.getMonth() + 1).padStart(2, "0");
-        const DD = String(dateLastHour.getDate()).padStart(2, "0");
-
-        const outputDateString = `${YYYY}-${MM}-${DD}T23:59:59.999Z`;
-        // console.log(outputDateString);
-
         return dateLastHour;
       }
 
@@ -67,17 +53,28 @@
         let tonight = getTodayLastHour();
         let tomorrowLastHour = convertToTomorrowLastHour(inputDate);
 
+        console.log(fromDateToString(tonight));
+        console.log(fromDateToString(tomorrowLastHour));
         // console.log(tonight);
         // console.log(limit);
-        if (tomorrowLastHour > tonight) {
-          console.log("FALSE - OCULTAR ROLLBACK");
-          console.log(`tomorrowLastHour: ${tomorrowLastHour}`);
-          console.log(`tonight: ${tomorrowLastHour}`);
-        } else {
-          console.log("TRUE - MOSTRAR ROLLBACK");
-          console.log(`tomorrowLastHour: ${tomorrowLastHour}`);
-          console.log(`tonight: ${tomorrowLastHour}`);
-        }
+        // if (tomorrowLastHour > tonight) {
+        //   console.log("FALSE - OCULTAR ROLLBACK");
+        //   console.log(`tomorrowLastHour: ${tomorrowLastHour}`);
+        //   console.log(`tonight: ${tomorrowLastHour}`);
+        // } else {
+        //   console.log("TRUE - MOSTRAR ROLLBACK");
+        //   console.log(`tomorrowLastHour: ${tomorrowLastHour}`);
+        //   console.log(`tonight: ${tomorrowLastHour}`);
+        // }
+      }
+
+      function fromDateToString(date) {
+        const YYYY = date.getFullYear();
+        const MM = String(date.getMonth() + 1).padStart(2, "0");
+        const DD = String(date.getDate()).padStart(2, "0");
+
+        const outputDateString = `${YYYY}-${MM}-${DD}T23:59:59.999Z`;
+        return outputDateString;
       }
     </script>
   </body>
