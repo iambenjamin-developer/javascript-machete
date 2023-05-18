@@ -66,6 +66,14 @@
       function isGreaterThanTonight(inputDate) {
         let tonight = getTodayLastHour();
         let limit = convertToTomorrowLastHour(inputDate);
+
+        // console.log(tonight);
+        // console.log(limit);
+        if (limit < tonight) {
+          console.log("TRUE - MOSTRAR ROLLBACK");
+        } else {
+          console.log("FALSE - OCULTAR ROLLBACK");
+        }
       }
     </script>
   </body>
